@@ -38,6 +38,20 @@
             font-style: italic;
             color: #007bff;
         }
+        .order-item {
+            margin-bottom: 10px;
+        }
+        .order-item-name {
+            font-weight: bold;
+        }
+        .order-item-price {
+            margin-left: 10px;
+            color: #007bff;
+        }
+        .order-item-remove {
+            color: #dc3545;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -47,10 +61,42 @@
         </div>
     </nav>
 
-    <div class="container" id="menu-container"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="menu-container"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Order</div>
+                    <div class="card-body">
+                        <div id="order-items"></div>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Order Summary</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="order-summary"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        let order = [];
+
         fetch('menu.json')
             .then(response => response.json())
             .then(data => {
@@ -103,6 +149,15 @@
                         itemPrice.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
                         menuItem.appendChild(itemPrice);
 
+                        const addToOrderButton = document.createElement('button');
+                        addToOrderButton.classList.add('btn', 'btn-sm', 'btn-outline-primary');
+                        addToOrderButton.textContent = 'Add to Order';
+                        addToOrderButton.addEventListener('click', () => {
+                            order.push({ name: item.name, price: item.price });
+                            updateOrder();
+                        });
+                        menuItem.appendChild(addToOrderButton);
+
                         if (item.options) {
                             const optionsContainer = document.createElement('div');
                             optionsContainer.classList.add('menu-item-options');
@@ -153,6 +208,45 @@
             .catch(error => {
                 console.error('Error fetching menu data:', error);
             });
+
+        function updateOrder() {
+            const orderItemsContainer = document.getElementById('order-items');
+            orderItemsContainer.innerHTML = '';
+
+            order.forEach((item, index) => {
+                const orderItem = document.createElement('div');
+                orderItem.classList.add('order-item');
+
+                const itemName = document.createElement('span');
+                itemName.classList.add('order-item-name');
+                itemName.textContent = item.name;
+                orderItem.appendChild(itemName);
+
+                const itemPrice = document.createElement('span');
+                itemPrice.classList.add('order-item-price');
+                itemPrice.textContent = `$${item.price.toFixed(2)}`;
+                orderItem.appendChild(itemPrice);
+
+                const removeItem = document.createElement('span');
+                removeItem.classList.add('order-item-remove');
+                removeItem.textContent = ' ×';
+                removeItem.addEventListener('click', () => {
+                    order.splice(index, 1);
+                    updateOrder();
+                });
+                orderItem.appendChild(removeItem);
+
+                orderItemsContainer.appendChild(orderItem);
+            });
+
+            const orderSummary = document.getElementById('order-summary');
+            orderSummary.innerHTML = '';
+            order.forEach(item => {
+                const summaryItem = document.createElement('div');
+                summaryItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                orderSummary.appendChild(summaryItem);
+            });
+        }
     </script>
 </body>
 </html>

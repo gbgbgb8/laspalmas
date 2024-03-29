@@ -1,0 +1,499 @@
+{
+    "appetizers_cocktails_soups_salads": [
+      {
+        "name": "AHI & FRUIT SALAD",
+        "description": "seared black & blue, served with in-season fruit, topped with wasabi aioli",
+        "price": 13
+      },
+      {
+        "name": "TOSTADA DE CEVICHE",
+        "description": "prawns, octopus, or both, mixed in onion, tomato, avocado, cilantro & lime",
+        "price": 8.5
+      },
+      {
+        "name": "CAMPECHANA COCKTAIL",
+        "description": "Seafood cocktail (choose 1, 2 or all: prawns, octopus & oysters), with tomato, onion, avocado & cilantro (optional chile Serrano)",
+        "price_small": 17,
+        "price_large": 22.75
+      },
+      {
+        "name": "PEAR SALAD",
+        "description": "heart of romaine, carrots, pistachios, blue cheese, orange-sesame dressing",
+        "price": 9.25
+      },
+      {
+        "name": "BEET SALAD",
+        "description": "heart of romaine, green beans, feta cheese, balsamic vinaigrette",
+        "price": 9.25
+      },
+      {
+        "name": "CAESAR SALAD",
+        "description": "heart of romaine, parmesan cheese, croutons & caesar dressing",
+        "price": 8,
+        "options": [
+          {
+            "name": "with GRILLED CHICKEN",
+            "price": 13
+          },
+          {
+            "name": "with PRAWNS (sweet & sour)",
+            "price": 16.5
+          }
+        ]
+      },
+      {
+        "name": "FRIED CALAMARI",
+        "description": "topped with spicy chile chipotle aioli & cilantro",
+        "price": 13
+      },
+      {
+        "name": "NACHOS",
+        "description": "monterey cheese, beans, sour cream, guacamole, pico de gallo, jalapeño",
+        "price": 9,
+        "options": [
+          {
+            "name": "with MEAT",
+            "price": 13
+          },
+          {
+            "name": "with PRAWNS",
+            "price": 17
+          }
+        ]
+      },
+      {
+        "name": "QUESADILLA",
+        "description": "monterey cheese on flour tortillas, a side of sour cream, guacamole & pico de gallo",
+        "price": 6,
+        "options": [
+          {
+            "name": "with MEAT",
+            "price": 10
+          },
+          {
+            "name": "with SPINACH & MUSHROOMS",
+            "price": 10
+          },
+          {
+            "name": "with PRAWNS (a la diabla-spicy, al mojo de ajo-garlic, or white wine)",
+            "price": 14
+          }
+        ]
+      },
+      {
+        "name": "TORTILLA SOUP",
+        "description": "chicken broth, monterey cheese & pico de gallo",
+        "price": 7,
+        "options": [
+          {
+            "name": "with GRILLED CHICKEN",
+            "price": 9.25
+          }
+        ]
+      },
+      {
+        "name": "7 MARES (7 SEAS SOUP)",
+        "description": "clams, prawns, mussels, tilapia, octopus, salmon & calamari in mild soup, side of tortillas or bread",
+        "price": 24
+      },
+      {
+        "name": "TACO SALAD",
+        "description": "meat, beans, rice, lettuce, tomato, cheese, sour cream, guacamole",
+        "price": 9.75
+      },
+      {
+        "name": "VEGGIE TACO SALAD",
+        "description": "mushroom, whole beans, lettuce, tomato, cheese, sour cream, avocado",
+        "price": 9.75
+      }
+    ],
+    "tacos": [
+      {
+        "name": "SOFT TACO",
+        "description": "meat, topped with cilantro, onion, tomatillo salsa on 4\" white corn tortilla",
+        "price": 2.25
+      },
+      {
+        "name": "HARD SHELL TACO",
+        "description": "meat, lettuce, tomato, cheese, sour cream & tomatillo salsa",
+        "price": 3
+      },
+      {
+        "name": "LARGE VEGGIE OR GRILLED CHICKEN SOFT TACO",
+        "description": "topped with cilantro, onion, tomatillo salsa",
+        "price": 3.75
+      },
+      {
+        "name": "FISH TACO",
+        "description": "tilapia sautéed in white wine, tomato & onion topped with cilantro & tomatillo salsa",
+        "price": 6
+      },
+      {
+        "name": "PRAWN TACO",
+        "description": "prawns sautéed in garlic, habanero, or white wine, tomato & onion, topped with cilantro & salsa",
+        "price": 7.25
+      }
+    ],
+    "burritos": [
+      {
+        "name": "LAS PALMAS",
+        "description": "meat, beans, rice, guacamole, pico de gallo & jalapeños topped with cheese, red & green salsa",
+        "price": 10
+      },
+      {
+        "name": "THE 2 IN 1",
+        "description": "Las Palmas burrito w/ chile relleno instead of meat",
+        "price": 12
+      },
+      {
+        "name": "CHILE VERDE",
+        "description": "carnitas sautéed inspicy green salsa, beans, rice, guacamole, pico de gallo & jalapeños, topped with cheese & green salsa",
+        "price": 10
+      },
+      {
+        "name": "MARIA's MOLE BURRITO",
+        "description": "grilled chicken, rice, beans, and cheese, topped with Maria's Mole(Guanajuato style)",
+        "price": 12
+      },
+      {
+        "name": "VEGETARIAN",
+        "description": "mushrooms, whole beans, lettuce, tomato, avocado, sour cream & cheese, wrapped in foil",
+        "price": 10
+      },
+      {
+        "name": "SUPER",
+        "description": "meat, beans, rice, guacamole, sour cream, cheese & jalapeños, wrapped in foil",
+        "price": 8.75
+      },
+      {
+        "name": "REGULAR",
+        "description": "meat, beans & rice, wrapped in foil",
+        "price": 7.25
+      },
+      {
+        "name": "BEAN & CHEESE",
+        "description": "simple & wrapped in foil",
+        "price": 4.75,
+        "options": [
+          {
+            "name": "with RICE",
+            "price": 5.75
+          }
+        ]
+      }
+    ],
+    "burrito_add_ons": [
+      {
+        "name": "to add grilled veggies",
+        "price": 2.75
+      },
+      {
+        "name": "to add prawns (mojo de ajo, a la Diablo, o vino blanco)",
+        "price": 4.25
+      },
+      {
+        "name": "to add grilled chicken",
+        "price": 3.25
+      },
+      {
+        "name": "to add extra meat",
+        "price": 2.75
+      },
+      {
+        "name": "for cheese & salsa on top",
+        "price": 3.75
+      },
+      {
+        "name": "to add or extra (sour cream, cheese, or pico de gallo)",
+        "price": 1.75
+      },
+      {
+        "name": "to add or extra guacamole",
+        "price": 2.75
+      }
+    ],
+    "meat_options": [
+      "Rotisserie Chicken",
+      "Grilled Chicken (+3.5)",
+      "Carnitas/Shredded Pork",
+      "Pastor/Pork in Red Salsa, Pineapple & Onion", 
+      "Grilled Steak/Asada",
+      "Ground Beef/Carne Molida",
+      "Prawns/Camarones (+4.5)"
+    ],
+    "rice_options": [
+      "RICE (made with chicken stock)"
+    ],
+    "beans_options": [
+      "Refried Pinto Beans (Refritos en Aceite Canola)",
+      "Whole Pinto Beans (Frijoles de la Olla)",
+      "Black Beans w/ corn, onion, tomato, serranos & cumin"
+    ],
+    "meat_or_veggie_entrees": [
+      {
+        "name": "FAJITAS",
+        "description": "sautéed in bell peppers, onion & our oregano-vinegar blend, side of tomatillo salsa & tortillas",
+        "options": [
+          {
+            "name": "CHICKEN or BEEF",
+            "price": 15
+          },
+          {
+            "name": "CHICKEN & BEEF or VEGGIE",
+            "price": 16.5
+          },
+          {
+            "name": "only PRAWNS",
+            "price": 18
+          },
+          {
+            "name": "MEAT & PRAWNS",
+            "price": 19
+          }
+        ]
+      },
+      {
+        "name": "CARNITAS",
+        "description": "Shredded Pork & tortillas",
+        "price": 15
+      },
+      {
+        "name": "CHILE VERDE",
+        "description": "Carnitas in Green salsa, tomato & onion, & tortillas",
+        "price": 15
+      },
+      {
+        "name": "CARNE ASADA",
+        "description": "grilled shoulder clod lightly seasoned with salt & pepper, side of tomatillo salsa & tortillas",
+        "price": 15
+      },
+      {
+        "name": "CHILE RELLENO",
+        "description": "chile pasilla stuffed with monterey cheese, battered and pan-fried, with salsa ranchera on top, & tortillas",
+        "price": 13.75
+      },
+      {
+        "name": "CHIMICHANGA",
+        "description": "meat or veggies, beans & cheese, rolled into a burrito & fried, sour cream & guacamole on top",
+        "price": 14
+      },
+      {
+        "name": "ENCHILADA",
+        "description": "meat or cheese, topped w/ cheese & red or green salsa",
+        "price_one": 9.25,
+        "price_two": 13.75
+      },
+      {
+        "name": "THREE FLAUTAS",
+        "description": "veggies, asada, carnitas, or chicken rolled into flutes, topped with cheese, tomato, sour cream, guacamole",
+        "price": 14
+      }
+    ],
+    "seafood_entrees": [
+      {
+        "name": "PRAWN OPTIONS",
+        "description": "served with tortillas",
+        "options": [
+          {
+            "name": "A LA CUCARACHA",
+            "description": "butterfly-cut prawns in huichol-garlic-lime sauce"
+          },
+          {
+            "name": "AL MOJO DE AJO",
+            "description": "in fresh garlic & herbs" 
+          },
+          {
+            "name": "A LA DIABLA",
+            "description": "in tomato-habanero salsa"
+          }
+        ],
+        "price": 17
+      },
+      {
+        "name": "CRAB ENCHILADAS",
+        "description": "crab sautéed in sour cream, tomato & onion, topped w/ cheese & red or green salsa",
+        "price_one": 12,
+        "price_two": 17  
+      },
+      {
+        "name": "\"MOJARA\" ~ WHOLE DEEP FRIED TILAPIA",
+        "description": "topped with chipotle aioli on top & side of tortillas",
+        "price": 17.5
+      },
+      {
+        "name": "FISH TACOS",
+        "description": "tilapia sautéed in white wine, tomato & onion, topped with cilantro & salsa", 
+        "price_one": 11,
+        "price_two": 14
+      },
+      {
+        "name": "PRAWN TACOS",
+        "description": "sauteed in garlic, habanero, or white wine, tomato & onion, cilantro & salsa on top",
+        "price_one": 12.5,
+        "price_two": 15.5
+      }
+    ],
+    "burgers_and_sandwiches": [
+      {
+        "name": "BURGER",
+        "description": "with mayo",
+        "price": 6,
+        "options": [
+          {
+            "name": "+cheddar",
+            "price": 0.75
+          },
+          {
+            "name": "+blue cheese",
+            "price": 1.25
+          }
+        ]
+      },
+      {
+        "name": "GRILLED CHICKEN SANDWICH",
+        "description": "avocado, jalapeños & mayo, on sourdough",
+        "price": 9.75
+      },
+      {
+        "name": "TORTA DE MILANESA",
+        "description": "chicken breast breaded in panko [Japanese Breading] with avocado, jalapeños & chile chipotle aioli, on a French dip roll",
+        "price": 11 
+      },
+      {
+        "name": "TORTA MEXICANA",
+        "description": "meat, beans, lettuce, sour cream, guacamole & jalapeños, on a white roll",
+        "price": 9.75
+      },
+      {
+        "name": "AHI BURGER",
+        "description": "seared black & blue, and chile chipotle aioli",
+        "price": 15.5
+      }
+    ],
+    "breakfast": [
+      {
+        "name": "CHILAQUILES",
+        "description": "fried white corn tortilla chips insalsa de tomate, topped w/ onion, tomato, cheese, sour cream & avocatl",
+        "price": 11,
+        "options": [
+          {
+            "name": "with 2 Eggs",
+            "price": 13
+          },
+          {
+            "name": "with Meat & 2 Eggs",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "name": "MACHACA",
+        "description": "Eggs scrambled with Asada or Carnitas, bell peppers, tomato and onion. Topped with sour cream & avocatl, served with rice, beans & tortillas",
+        "price": 13
+      },
+      {
+        "name": "HUEVOS CON CHORIZO",
+        "description": "Eggs scrambled in Chorizo (Spicy Sausage, tomato & onion). Topped with sour cream & guacamole, served with rice, beans & tortillas.",
+        "price": 13
+      },
+      {
+        "name": "HUEVOS RANCHEROS",
+        "description": "tortilla topped w/2 eggs (scrambled or sunny side up), beans & salsa ranchera, with a side of rice & tortillas",
+        "price": 13  
+      }
+    ],
+    "sides": [
+      {
+        "name": "1 MEAT ENCHILADA",
+        "price": 4.25
+      },
+      {
+        "name": "POTATO",
+        "description": "blue cheese potato gratine, roasted potato with garlic, or mashed",
+        "price": 6.5
+        },
+        {
+        "name": "1 CHIMICHANGA",
+        "price": 8
+        },
+        {
+        "name": "1 CHILE RELLENO",
+        "price": 7
+        },
+        {
+        "name": "GRILLED CHILES, ONIONS w/ SEASONING",
+        "description": "Chiles y Cebollas Rostizadas",
+        "price": 2.75
+        },
+        {
+        "name": "3 FLAUTAS",
+        "price": 8
+        },
+        {
+        "name": "FRIES",
+        "price": 3.5
+        },
+        {
+        "name": "DRESSING (Aderezo)",
+        "price": 1.5
+        },
+        {
+        "name": "BEANS (Frijoles)",
+        "price": 3
+        },
+        {
+        "name": "VEGGIES (Vegetales)",
+        "price": 5.25
+        },
+        {
+        "name": "TOMATILLO SALSA",
+        "price": 1.5
+        },
+        {
+        "name": "RICE (Arroz)",
+        "price": 3
+        },
+        {
+        "name": "SOUR CREAM (Crema)",
+        "price": 1
+        },
+        {
+        "name": "HOSTEN SALSA (spicy Habanero)",
+        "price": 1.5
+        },
+        {
+        "name": "GUACAMOLE (with Chips)",
+        "price": 6
+        },
+        {
+        "name": "LIME (Limón Verde)",
+        "price": 1
+        },
+        {
+        "name": "TORTILLAS (Corn or Flour)",
+        "price": 1.75
+        },
+        {
+        "name": "AVOCADO (Avocatl)",
+        "price": 4.25
+        },
+        {
+        "name": "LEMON (Limón Amarillo)",
+        "price": 1
+        }
+        ],
+        "chips_and_salsa": [
+        {
+        "name": "CHIPS & SALSA TO GO",
+        "price": 4
+        },
+        {
+        "name": "CHIPS & SALSA IN HOUSE (For Orders Under $5.00)",
+        "price": 1.5
+        },
+        {
+        "description": "For Orders Over $5.00, 1st Round of Chips & Salsa is On Us, For Additional Orders",
+        "price": 2
+        }
+        ]
+        }

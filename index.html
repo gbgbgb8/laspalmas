@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Palmas Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <style>
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Las Palmas Menu</h1>
+        <div id="menu-container"></div>
+    </div>
+
+    <script>
+        fetch('menu.json')
+            .then(response => response.json())
+            .then(data => {
+                const menuContainer = document.getElementById('menu-container');
+
+                for (const section in data) {
+                    const sectionDiv = document.createElement('div');
+                    sectionDiv.classList.add('menu-section');
+
+                    const sectionTitle = document.createElement('h2');
+                    sectionTitle.textContent = section.replace(/_/g, ' ').toUpperCase();
+                    sectionDiv.appendChild(sectionTitle);
+
+                    const table = document.createElement('table');
+                    table.classList.add('table');
+
+                    const tableHeader = document.createElement('thead');
+                    const headerRow = document.createElement('tr');
+                    const headers = ['Name', 'Description', 'Price'];
+                    headers.forEach(headerText => {
+                        const th = document.createElement('th');
+                        th.textContent = headerText;
+                        headerRow.appendChild(th);
+                    });
+                    tableHeader.appendChild(headerRow);
+                    table.appendChild(tableHeader);
+
+                    const tableBody = document.createElement('tbody');
+                    data[section].forEach(item => {
+                        const row = document.createElement('tr');
+
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = item.name;
+                        row.appendChild(nameCell);
+
+                        const descriptionCell = document.createElement('td');
+                        descriptionCell.textContent = item.description || '';
+                        row.appendChild(descriptionCell);
+
+                        const priceCell = document.createElement('td');
+                        priceCell.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
+                        row.appendChild(priceCell);
+
+                        tableBody.appendChild(row);
+
+                        if (item.options) {
+                            item.options.forEach(option => {
+                                const optionRow = document.createElement('tr');
+
+                                const optionNameCell = document.createElement('td');
+                                optionNameCell.textContent = option.name;
+                                optionNameCell.style.paddingLeft = '2rem';
+                                optionRow.appendChild(optionNameCell);
+
+                                const optionDescriptionCell = document.createElement('td');
+                                optionDescriptionCell.textContent = option.description || '';
+                                optionRow.appendChild(optionDescriptionCell);
+
+                                const optionPriceCell = document.createElement('td');
+                                optionPriceCell.textContent = option.price ? `$${option.price.toFixed(2)}` : '';
+                                optionRow.appendChild(optionPriceCell);
+
+                                tableBody.appendChild(optionRow);
+                            });
+                        }
+                    });
+
+                    table.appendChild(tableBody);
+                    sectionDiv.appendChild(table);
+                    menuContainer.appendChild(sectionDiv);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching menu data:', error);
+            });
+    </script>
+</body>
+</html>

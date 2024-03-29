@@ -9,6 +9,18 @@
         .menu-section {
             margin-bottom: 2rem;
         }
+        .menu-item {
+            margin-bottom: 1rem;
+        }
+        .menu-item-name {
+            font-weight: bold;
+        }
+        .menu-item-description {
+            margin-left: 1rem;
+        }
+        .menu-item-price {
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -31,62 +43,77 @@
                     sectionTitle.textContent = section.replace(/_/g, ' ').toUpperCase();
                     sectionDiv.appendChild(sectionTitle);
 
-                    const table = document.createElement('table');
-                    table.classList.add('table');
-
-                    const tableHeader = document.createElement('thead');
-                    const headerRow = document.createElement('tr');
-                    const headers = ['Name', 'Description', 'Price'];
-                    headers.forEach(headerText => {
-                        const th = document.createElement('th');
-                        th.textContent = headerText;
-                        headerRow.appendChild(th);
-                    });
-                    tableHeader.appendChild(headerRow);
-                    table.appendChild(tableHeader);
-
-                    const tableBody = document.createElement('tbody');
                     data[section].forEach(item => {
-                        const row = document.createElement('tr');
+                        const menuItem = document.createElement('div');
+                        menuItem.classList.add('menu-item');
 
-                        const nameCell = document.createElement('td');
-                        nameCell.textContent = item.name;
-                        row.appendChild(nameCell);
+                        const itemName = document.createElement('div');
+                        itemName.classList.add('menu-item-name');
+                        itemName.textContent = item.name;
+                        menuItem.appendChild(itemName);
 
-                        const descriptionCell = document.createElement('td');
-                        descriptionCell.textContent = item.description || '';
-                        row.appendChild(descriptionCell);
+                        const itemNameEs = document.createElement('div');
+                        itemNameEs.classList.add('menu-item-name');
+                        itemNameEs.textContent = item.name_es || '';
+                        menuItem.appendChild(itemNameEs);
 
-                        const priceCell = document.createElement('td');
-                        priceCell.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
-                        row.appendChild(priceCell);
+                        const itemDescription = document.createElement('div');
+                        itemDescription.classList.add('menu-item-description');
+                        itemDescription.textContent = item.description || '';
+                        menuItem.appendChild(itemDescription);
 
-                        tableBody.appendChild(row);
+                        const itemDescriptionEs = document.createElement('div');
+                        itemDescriptionEs.classList.add('menu-item-description');
+                        itemDescriptionEs.textContent = item.description_es || '';
+                        menuItem.appendChild(itemDescriptionEs);
+
+                        const itemPrice = document.createElement('div');
+                        itemPrice.classList.add('menu-item-price');
+                        itemPrice.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
+                        menuItem.appendChild(itemPrice);
 
                         if (item.options) {
+                            const optionsContainer = document.createElement('div');
+                            optionsContainer.classList.add('menu-item-options');
+
                             item.options.forEach(option => {
-                                const optionRow = document.createElement('tr');
+                                const optionItem = document.createElement('div');
+                                optionItem.classList.add('menu-item');
 
-                                const optionNameCell = document.createElement('td');
-                                optionNameCell.textContent = option.name;
-                                optionNameCell.style.paddingLeft = '2rem';
-                                optionRow.appendChild(optionNameCell);
+                                const optionName = document.createElement('div');
+                                optionName.classList.add('menu-item-name');
+                                optionName.textContent = option.name;
+                                optionItem.appendChild(optionName);
 
-                                const optionDescriptionCell = document.createElement('td');
-                                optionDescriptionCell.textContent = option.description || '';
-                                optionRow.appendChild(optionDescriptionCell);
+                                const optionNameEs = document.createElement('div');
+                                optionNameEs.classList.add('menu-item-name');
+                                optionNameEs.textContent = option.name_es || '';
+                                optionItem.appendChild(optionNameEs);
 
-                                const optionPriceCell = document.createElement('td');
-                                optionPriceCell.textContent = option.price ? `$${option.price.toFixed(2)}` : '';
-                                optionRow.appendChild(optionPriceCell);
+                                const optionDescription = document.createElement('div');
+                                optionDescription.classList.add('menu-item-description');
+                                optionDescription.textContent = option.description || '';
+                                optionItem.appendChild(optionDescription);
 
-                                tableBody.appendChild(optionRow);
+                                const optionDescriptionEs = document.createElement('div');
+                                optionDescriptionEs.classList.add('menu-item-description');
+                                optionDescriptionEs.textContent = option.description_es || '';
+                                optionItem.appendChild(optionDescriptionEs);
+
+                                const optionPrice = document.createElement('div');
+                                optionPrice.classList.add('menu-item-price');
+                                optionPrice.textContent = option.price ? `$${option.price.toFixed(2)}` : '';
+                                optionItem.appendChild(optionPrice);
+
+                                optionsContainer.appendChild(optionItem);
                             });
+
+                            menuItem.appendChild(optionsContainer);
                         }
+
+                        sectionDiv.appendChild(menuItem);
                     });
 
-                    table.appendChild(tableBody);
-                    sectionDiv.appendChild(table);
                     menuContainer.appendChild(sectionDiv);
                 }
             })

@@ -4,31 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Las Palmas Menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <style>
-        .menu-section {
-            margin-bottom: 2rem;
+        body {
+            padding-top: 60px;
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #6c757d;
+            color: white;
+            cursor: pointer;
+        }
+        .card-body {
+            background-color: white;
         }
         .menu-item {
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
         }
         .menu-item-name {
             font-weight: bold;
+            font-size: 1.1rem;
         }
         .menu-item-description {
             margin-left: 1rem;
+            color: #6c757d;
         }
         .menu-item-price {
             font-style: italic;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Las Palmas Menu</h1>
-        <div id="menu-container"></div>
-    </div>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Las Palmas Menu</a>
+        </div>
+    </nav>
 
+    <div class="container" id="menu-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         fetch('menu.json')
             .then(response => response.json())
@@ -37,11 +58,21 @@
 
                 for (const section in data) {
                     const sectionDiv = document.createElement('div');
-                    sectionDiv.classList.add('menu-section');
+                    sectionDiv.classList.add('card');
 
-                    const sectionTitle = document.createElement('h2');
-                    sectionTitle.textContent = section.replace(/_/g, ' ').toUpperCase();
-                    sectionDiv.appendChild(sectionTitle);
+                    const sectionHeader = document.createElement('div');
+                    sectionHeader.classList.add('card-header');
+                    sectionHeader.setAttribute('data-bs-toggle', 'collapse');
+                    sectionHeader.setAttribute('data-bs-target', `#${section}`);
+                    sectionHeader.textContent = section.replace(/_/g, ' ').toUpperCase();
+                    sectionDiv.appendChild(sectionHeader);
+
+                    const sectionBody = document.createElement('div');
+                    sectionBody.classList.add('collapse');
+                    sectionBody.id = section;
+
+                    const sectionBodyContent = document.createElement('div');
+                    sectionBodyContent.classList.add('card-body');
 
                     data[section].forEach(item => {
                         const menuItem = document.createElement('div');
@@ -111,9 +142,11 @@
                             menuItem.appendChild(optionsContainer);
                         }
 
-                        sectionDiv.appendChild(menuItem);
+                        sectionBodyContent.appendChild(menuItem);
                     });
 
+                    sectionBody.appendChild(sectionBodyContent);
+                    sectionDiv.appendChild(sectionBody);
                     menuContainer.appendChild(sectionDiv);
                 }
             })

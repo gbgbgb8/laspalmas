@@ -102,107 +102,118 @@
             .then(data => {
                 const menuContainer = document.getElementById('menu-container');
 
-                for (const section in data) {
-                    const sectionDiv = document.createElement('div');
-                    sectionDiv.classList.add('card');
+                for (const category in data.menu) {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.classList.add('card');
 
-                    const sectionHeader = document.createElement('div');
-                    sectionHeader.classList.add('card-header');
-                    sectionHeader.setAttribute('data-bs-toggle', 'collapse');
-                    sectionHeader.setAttribute('data-bs-target', `#${section}`);
-                    sectionHeader.textContent = section.replace(/_/g, ' ').toUpperCase();
-                    sectionDiv.appendChild(sectionHeader);
+                    const categoryHeader = document.createElement('div');
+                    categoryHeader.classList.add('card-header');
+                    categoryHeader.setAttribute('data-bs-toggle', 'collapse');
+                    categoryHeader.setAttribute('data-bs-target', `#${category}`);
+                    categoryHeader.textContent = category.replace(/_/g, ' ').toUpperCase();
+                    categoryDiv.appendChild(categoryHeader);
 
-                    const sectionBody = document.createElement('div');
-                    sectionBody.classList.add('collapse');
-                    sectionBody.id = section;
+                    const categoryBody = document.createElement('div');
+                    categoryBody.classList.add('collapse');
+                    categoryBody.id = category;
 
-                    const sectionBodyContent = document.createElement('div');
-                    sectionBodyContent.classList.add('card-body');
+                    const categoryBodyContent = document.createElement('div');
+                    categoryBodyContent.classList.add('card-body');
 
-                    data[section].forEach(item => {
-                        const menuItem = document.createElement('div');
-                        menuItem.classList.add('menu-item');
+                    for (const section in data.menu[category]) {
+                        const sectionDiv = document.createElement('div');
+                        sectionDiv.classList.add('menu-section');
 
-                        const itemName = document.createElement('div');
-                        itemName.classList.add('menu-item-name');
-                        itemName.textContent = item.name;
-                        menuItem.appendChild(itemName);
+                        const sectionTitle = document.createElement('h3');
+                        sectionTitle.textContent = section.replace(/_/g, ' ').toUpperCase();
+                        sectionDiv.appendChild(sectionTitle);
 
-                        const itemNameEs = document.createElement('div');
-                        itemNameEs.classList.add('menu-item-name');
-                        itemNameEs.textContent = item.name_es || '';
-                        menuItem.appendChild(itemNameEs);
+                        data.menu[category][section].forEach(item => {
+                            const menuItem = document.createElement('div');
+                            menuItem.classList.add('menu-item');
 
-                        const itemDescription = document.createElement('div');
-                        itemDescription.classList.add('menu-item-description');
-                        itemDescription.textContent = item.description || '';
-                        menuItem.appendChild(itemDescription);
+                            const itemName = document.createElement('div');
+                            itemName.classList.add('menu-item-name');
+                            itemName.textContent = item.name;
+                            menuItem.appendChild(itemName);
 
-                        const itemDescriptionEs = document.createElement('div');
-                        itemDescriptionEs.classList.add('menu-item-description');
-                        itemDescriptionEs.textContent = item.description_es || '';
-                        menuItem.appendChild(itemDescriptionEs);
+                            const itemNameEs = document.createElement('div');
+                            itemNameEs.classList.add('menu-item-name');
+                            itemNameEs.textContent = item.name_es || '';
+                            menuItem.appendChild(itemNameEs);
 
-                        const itemPrice = document.createElement('div');
-                        itemPrice.classList.add('menu-item-price');
-                        itemPrice.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
-                        menuItem.appendChild(itemPrice);
+                            const itemDescription = document.createElement('div');
+                            itemDescription.classList.add('menu-item-description');
+                            itemDescription.textContent = item.description || '';
+                            menuItem.appendChild(itemDescription);
 
-                        const addToOrderButton = document.createElement('button');
-                        addToOrderButton.classList.add('btn', 'btn-sm', 'btn-outline-primary');
-                        addToOrderButton.textContent = 'Add to Order';
-                        addToOrderButton.addEventListener('click', () => {
-                            order.push({ name: item.name, price: item.price });
-                            updateOrder();
-                        });
-                        menuItem.appendChild(addToOrderButton);
+                            const itemDescriptionEs = document.createElement('div');
+                            itemDescriptionEs.classList.add('menu-item-description');
+                            itemDescriptionEs.textContent = item.description_es || '';
+                            menuItem.appendChild(itemDescriptionEs);
 
-                        if (item.options) {
-                            const optionsContainer = document.createElement('div');
-                            optionsContainer.classList.add('menu-item-options');
+                            const itemPrice = document.createElement('div');
+                            itemPrice.classList.add('menu-item-price');
+                            itemPrice.textContent = item.price ? `$${item.price.toFixed(2)}` : '';
+                            menuItem.appendChild(itemPrice);
 
-                            item.options.forEach(option => {
-                                const optionItem = document.createElement('div');
-                                optionItem.classList.add('menu-item');
-
-                                const optionName = document.createElement('div');
-                                optionName.classList.add('menu-item-name');
-                                optionName.textContent = option.name;
-                                optionItem.appendChild(optionName);
-
-                                const optionNameEs = document.createElement('div');
-                                optionNameEs.classList.add('menu-item-name');
-                                optionNameEs.textContent = option.name_es || '';
-                                optionItem.appendChild(optionNameEs);
-
-                                const optionDescription = document.createElement('div');
-                                optionDescription.classList.add('menu-item-description');
-                                optionDescription.textContent = option.description || '';
-                                optionItem.appendChild(optionDescription);
-
-                                const optionDescriptionEs = document.createElement('div');
-                                optionDescriptionEs.classList.add('menu-item-description');
-                                optionDescriptionEs.textContent = option.description_es || '';
-                                optionItem.appendChild(optionDescriptionEs);
-
-                                const optionPrice = document.createElement('div');
-                                optionPrice.classList.add('menu-item-price');
-                                optionPrice.textContent = option.price ? `$${option.price.toFixed(2)}` : '';
-                                optionItem.appendChild(optionPrice);
-
-                                optionsContainer.appendChild(optionItem);
+                            const addToOrderButton = document.createElement('button');
+                            addToOrderButton.classList.add('btn', 'btn-sm', 'btn-outline-primary');
+                            addToOrderButton.textContent = 'Add to Order';
+                            addToOrderButton.addEventListener('click', () => {
+                                order.push({ name: item.name, price: item.price });
+                                updateOrder();
                             });
+                            menuItem.appendChild(addToOrderButton);
 
-                            menuItem.appendChild(optionsContainer);
-                        }
+                            if (item.options) {
+                                const optionsContainer = document.createElement('div');
+                                optionsContainer.classList.add('menu-item-options');
 
-                        sectionBodyContent.appendChild(menuItem);
-                    });
+                                item.options.forEach(option => {
+                                    const optionItem = document.createElement('div');
+                                    optionItem.classList.add('menu-item');
 
-                    sectionBody.appendChild(sectionBodyContent);
-                    sectionDiv.appendChild(sectionBody);
-                    menuContainer.appendChild(sectionDiv);
+                                    const optionName = document.createElement('div');
+                                    optionName.classList.add('menu-item-name');
+                                    optionName.textContent = option.name;
+                                    optionItem.appendChild(optionName);
+
+                                    const optionNameEs = document.createElement('div');
+                                    optionNameEs.classList.add('menu-item-name');
+                                    optionNameEs.textContent = option.name_es || '';
+                                    optionItem.appendChild(optionNameEs);
+
+                                    const optionDescription = document.createElement('div');
+                                    optionDescription.classList.add('menu-item-description');
+                                    optionDescription.textContent = option.description || '';
+                                    optionItem.appendChild(optionDescription);
+
+                                    const optionDescriptionEs = document.createElement('div');
+                                    optionDescriptionEs.classList.add('menu-item-description');
+                                    optionDescriptionEs.textContent = option.description_es || '';
+                                    optionItem.appendChild(optionDescriptionEs);
+
+                                    const optionPrice = document.createElement('div');
+                                    optionPrice.classList.add('menu-item-price');
+                                    optionPrice.textContent = option.price ? `$${option.price.toFixed(2)}` : '';
+                                    optionItem.appendChild(optionPrice);
+
+                                    optionsContainer.appendChild(optionItem);
+                                });
+
+                                menuItem.appendChild(optionsContainer);
+                            }
+
+                            sectionDiv.appendChild(menuItem);
+                        });
+
+                        categoryBodyContent.appendChild(sectionDiv);
+                    }
+
+                    categoryBody.appendChild(categoryBodyContent);
+                    categoryDiv.appendChild(categoryBody);
+                    menuContainer.appendChild(categoryDiv);
                 }
             })
             .catch(error => {

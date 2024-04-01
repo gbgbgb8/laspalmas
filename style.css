@@ -37,3 +37,9 @@ body {
     font-style: italic;
     color: #666;
   }
+
+  .menu-item-description.es {
+    font-style: italic;
+    color: #888;
+    margin-top: 0.25rem;
+  }

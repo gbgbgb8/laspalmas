@@ -24,13 +24,18 @@ fetch('menu.json')
 
         const itemPrice = document.createElement('span');
         itemPrice.classList.add('menu-item-price');
-        itemPrice.textContent = `$${item.price}`;
+        itemPrice.textContent = item.price ? `$${item.price}` : '';
         itemDiv.appendChild(itemPrice);
 
         const itemDescription = document.createElement('div');
         itemDescription.classList.add('menu-item-description');
         itemDescription.textContent = item.description;
         itemDiv.appendChild(itemDescription);
+
+        const itemDescriptionEs = document.createElement('div');
+        itemDescriptionEs.classList.add('menu-item-description', 'es');
+        itemDescriptionEs.textContent = item.description_es;
+        itemDiv.appendChild(itemDescriptionEs);
 
         sectionDiv.appendChild(itemDiv);
       });

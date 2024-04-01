@@ -2,44 +2,60 @@ fetch('menu.json')
   .then(response => response.json())
   .then(data => {
     const menuContainer = document.getElementById('menu-container');
+    const additionalInfoContainer = document.getElementById('additional-info');
 
     for (const section in data) {
-      if (section === 'additional_info') continue;
+      if (section === 'additional_info') {
+        const additionalInfo = data[section];
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = 'Additional Information';
+        details.appendChild(summary);
 
-      const sectionDiv = document.createElement('div');
-      sectionDiv.classList.add('menu-section');
+        const ul = document.createElement('ul');
+        additionalInfo.forEach(info => {
+          const li = document.createElement('li');
+          li.textContent = info;
+          ul.appendChild(li);
+        });
 
-      const sectionTitle = document.createElement('h2');
-      sectionTitle.textContent = section.replace(/_/g, ' ');
-      sectionDiv.appendChild(sectionTitle);
+        details.appendChild(ul);
+        additionalInfoContainer.appendChild(details);
+      } else {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('menu-section');
 
-      data[section].forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('menu-item');
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.textContent = section.replace(/_/g, ' ');
+        sectionDiv.appendChild(sectionTitle);
 
-        const itemName = document.createElement('span');
-        itemName.classList.add('menu-item-name');
-        itemName.textContent = item.name;
-        itemDiv.appendChild(itemName);
+        const table = document.createElement('table');
+        table.setAttribute('role', 'grid');
 
-        const itemPrice = document.createElement('span');
-        itemPrice.classList.add('menu-item-price');
-        itemPrice.textContent = item.price ? `$${item.price}` : '';
-        itemDiv.appendChild(itemPrice);
+        data[section].forEach(item => {
+          const row = document.createElement('tr');
 
-        const itemDescription = document.createElement('div');
-        itemDescription.classList.add('menu-item-description');
-        itemDescription.textContent = item.description;
-        itemDiv.appendChild(itemDescription);
+          const nameCell = document.createElement('td');
+          nameCell.textContent = item.name;
+          row.appendChild(nameCell);
 
-        const itemDescriptionEs = document.createElement('div');
-        itemDescriptionEs.classList.add('menu-item-description', 'es');
-        itemDescriptionEs.textContent = item.description_es;
-        itemDiv.appendChild(itemDescriptionEs);
+          const priceCell = document.createElement('td');
+          priceCell.textContent = item.price ? `$${item.price}` : '';
+          row.appendChild(priceCell);
 
-        sectionDiv.appendChild(itemDiv);
-      });
+          const descriptionCell = document.createElement('td');
+          descriptionCell.textContent = item.description;
+          row.appendChild(descriptionCell);
 
-      menuContainer.appendChild(sectionDiv);
+          const descriptionEsCell = document.createElement('td');
+          descriptionEsCell.textContent = item.description_es;
+          row.appendChild(descriptionEsCell);
+
+          table.appendChild(row);
+        });
+
+        sectionDiv.appendChild(table);
+        menuContainer.appendChild(sectionDiv);
+      }
     }
   });

@@ -11,16 +11,28 @@
   <main class="container">
     <h1>Las Palmas Mexican Restaurant Menu</h1>
     <div class="grid">
-      <div id="menu-container"></div>
-      <div id="order-summary">
-        <h2>Order Summary</h2>
-        <ul id="order-items"></ul>
+      <div id="menu-container" class="grid"></div>
+      <div id="order-summary" class="card">
+        <h2 class="nav">Order Summary</h2>
+        <ul id="order-items" class="list"></ul>
         <p>Total Cost: $<span id="total-cost">0.00</span></p>
-        <button id="place-order">Place Order</button>
+        <button id="place-order" class="button">Place Order</button>
       </div>
       <div id="additional-info"></div>
     </div>
   </main>
+
+  <dialog id="order-modal" class="dialog">
+    <div class="dialog-overlay"></div>
+    <div class="dialog-content">
+      <h3 class="dialog-title">Order Summary</h3>
+      <div id="order-summary-modal"></div>
+      <div class="dialog-actions">
+        <button id="cancel-order" class="button">Cancel</button>
+        <button id="confirm-order" class="button">Confirm</button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>

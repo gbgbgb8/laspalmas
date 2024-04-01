@@ -156,7 +156,12 @@
       "name": "PRAWN TACO",
       "description": "prawns sautéed in garlic, habanero, or white wine, tomato & onion, topped with cilantro & salsa",
       "description_es": "Taco de camarones al mojo de ajo, a la diabla, o sarteniados en vino blanco con jitomate y cebolla",
-      "price": 7.25
+      "price": 7.25,
+      "options": [
+        "al mojo de ajo",
+        "a la diabla",
+        "sarteniados en vino blanco con jitomate y cebolla"
+      ]
     }
   ],
   "burritos": [
@@ -293,347 +298,440 @@
       "description": "veggies, asada, carnitas, or chicken rolled into flutes, topped with cheese, tomato, sour cream, guacamole",
       "description_es": "Flautas de vegetales o carne asada, carnitas, pollo, por encima lleva queso, jitomatl, crema & guacamole",
       "price": 14
-    }
-  ],
-  "seafood_entrees": [
+    }],
+    "seafood_entrees": [
     {
-      "name": "PRAWN OPTIONS",
-      "description": "served with tortillas",
-      "description_es":"Opciones de Camarones, servido con tortillas",
-      "options": [
-      {
-      "name": "A LA CUCARACHA",
-      "description": "butterfly-cut prawns in huichol-garlic-lime sauce",
-      "description_es": "corte de mariposa con salsa huichol-ajo-limón"
-      },
-      {
-      "name": "AL MOJO DE AJO",
-      "description": "in fresh garlic & herbs",
-      "description_es": "en ajo fresco y especies"
-      },
-      {
-      "name": "A LA DIABLA",
-      "description": "in tomato-habanero salsa",
-      "description_es": "en salsa de jitomatl & habanero"
-      }
-      ],
-      "price": 17
-      },
-      {
-      "name": "CRAB ENCHILADAS",
-      "description": "crab sautéed in sour cream, tomato & onion, topped w/ cheese & red or green salsa",
-      "description_es": "Enchilada de Cangrejo sarteneado con crema, jitomate y cebolla, encima lleva queso y salsa verde o roja",
-      "options": [
-      {
-      "count": 1,
-      "price": 12
-      },
-      {
-      "count": 2,
-      "price": 17
-      }
-      ]
-      },
-      {
-      "name": "MOJARA",
-      "description": "WHOLE DEEP FRIED TILAPIA topped with chipotle aioli on top & side of tortillas",
-      "description_es": "Tiliapia Frita Entera y por encima lleva aioli de chipotle arriba, servido con tortillas",
-      "price": 17.5
-      },
-      {
-      "name": "FISH TACOS",
-      "description": "tilapia sautéed in white wine, tomato & onion, topped with cilantro & salsa",
-      "description_es": "Tacos de Pescada de Tilapia sarteneada en vino blanca, jitomatl & cebolla, arriba cilantro & salsa",
-      "options": [
-      {
-      "count": 1,
-      "price": 11
-      },
-      {
-      "count": 2,
-      "price": 14
-      }
-      ]
-      },
-      {
-      "name": "PRAWN TACOS",
-      "description": "sauteed in garlic, habanero, or white wine, tomato & onion, cilantro & salsa on top",
-      "description_es": "Tacos de Camarón sarteneado en vino blanca, jitomate & cebolla, arriba cilantro & salsa",
-      "options": [
-      {
-      "count": 1,
-      "price": 12.5
-      },
-      {
-      "count": 2,
-      "price": 15.5
-      }
-      ]
-      }
-      ],
-      "burgers_sandwiches": [
-      {
-      "name": "BURGER",
-      "description": "with mayo",
-      "description_es": "mayonesa",
-      "price": 6,
-      "addons": [
-      {
-      "name": "cheddar",
-      "name_es": "queso Amarillo",
-      "price": 0.75
-      },
-      {
-      "name": "blue cheese",
-      "name_es": "queso azul",
-      "price": 1.25
-      }
-      ]
-      },
-      {
-      "name": "GRILLED CHICKEN SANDWICH",
-      "description": "avocado, jalapeños & mayo, on sourdough",
-      "description_es": "Sandwich de Pollo a la Parilla: avocatl, jalapeños & mayonesa, en pan agrio",
-      "price": 9.75
-      },
-      {
-      "name": "TORTA DE MILANESA",
-      "description": "chicken breast breaded in panko [Japanese Breading] with avocado, jalapeños & chile chipotle aioli, on a French dip roll",
-      "description_es": "Pechuga de pollo empanizado en panko [pan Japonés molido] con avocatl, jalapeños & aderezo de chile chipotle, en pan de rollo blanco Frances",
-      "price": 11
-      },
-      {
-      "name": "TORTA MEXICANA",
-      "description": "meat, beans, lettuce, sour cream, guacamole & jalapeños, on a white roll",
-      "description_es": "Carne, frijoles, lechuga, crema, guacamole & jalapeños, en pan de rollo blanco Frances",
-      "price": 9.75
-      },
-      {
-      "name": "AHI BURGER",
-      "description": "seared black & blue, and chile chipotle aioli",
-      "description_es": "Hamburguesa de Atun: soasado negro y azul, y con aderezo de chile chipotle",
-      "price": 15.5
-      }
-      ],
-      "breakfast": [
-      {
-      "name": "CHILAQUILES",
-      "description": "fried white corn tortilla chips insalsa de tomate, topped w/ onion, tomato, cheese, sour cream & avocatl",
-      "description_es": "Tortillas de maiz blanco fritas en salsa de tomate, arriba lleva cebolla, tomato, queso, crema & avocatl",
-      "options": [
-      {
-      "description": "base",
-      "price": 11
-      },
-      {
-      "description": "with 2 Eggs",
-      "description_es": "con 2 huevos",
-      "price": 13
-      },
-      {
-      "description": "with Meat & 2 Eggs",
-      "description_es": "con carne y 2 huevos",
-      "price": 15
-      }
-      ]
-      },
-      {
-      "name": "MACHACA",
-      "description": "Eggs scrambled with Asada or Carnitas, bell peppers, tomato and onion. Topped with sour cream & avocatl, served with rice, beans & tortillas",
-      "description_es": "Huevo revuelto con Asada o Carnitas, chile campana, jitomatly cebolla. Arriba lleva crema y avocatl, servido con arroz, frijoles & tortillas",
-      "price": 13
-      },
-      {
-      "name": "HUEVOS CON CHORIZO",
-      "description": "Eggs scrambled in Chorizo (Spicy Sausage, tomato & onion). Topped with sour cream & guacamole, served with rice, beans & tortillas",
-      "description_es": "Huevo revuelto con chorizo, jitomatl y cebolla. Arriba lleva crema y guacamole, servido con arroz, frijoles & tortillas",
-      "price": 13
-      },
-      {
-      "name": "HUEVOS RANCHEROS",
-      "description": "tortilla topped w/2 eggs(scrambled or sunny side up), beans & salsa ranchera, with a side of rice & tortillas",
-      "description_es": "Tortilla que lleva encima 2 huevos (revueltos o estrellados), frijoles, y salsa ranchera, acompañado de arroz y tortillas",
-      "price": 13
-      }
-      ],
-      "sides_and_extras": [
-      {
-      "name": "MEAT ENCHILADA",
-      "count": 1,
-      "price": 4.25
-      },
-      {
-      "name": "CHIMICHANGA",
-      "count": 1,
-      "price": 8
-      },
-      {
-      "name": "CHILE RELLENO",
-      "count": 1,
-      "price": 7
-      },
-      {
-      "name": "FLAUTAS",
-      "count": 3,
-      "price": 8
-      },
-      {
-      "name": "POTATO",
-      "description": "blue cheese potato gratine, roasted potato with garlic, or mashed",
-      "description_es": "Papa: torta de papa con queso azul, papa rostizada con ajo, o puré de papa",
-      "price": 6.5
-      },
-      {
-      "name": "GRILLED CHILES, ONIONS w/ SEASONING",
-      "description_es": "(Chiles y Cebollas Rostizadas)",
-      "price": 2.75
-      },
-      {
-      "name": "FRIES",
-      "price": 3.5
-      },
-      {
-      "name": "DRESSING",
-      "name_es": "(Aderezo)",
-      "price": 1.5
-      },
-      {
-      "name": "BEANS",
-      "name_es": "(Frijoles)",
-      "price": 3
-      },
-      {
-      "name": "VEGGIES",
-      "name_es": "(Vegetales)",
-      "price": 5.25
-      },
-      {
-      "name": "TOMATILLO SALSA",
-      "price": 1.5
-      },
-      {
-      "name": "RICE",
-      "name_es": "(Arroz)",
-      "price": 3
-      },
-      {
-      "name": "SOUR CREAM",
-      "name_es": "(Crema)",
-      "price": 1
-      },
-      {
-      "name": "HOSTEN SALSA (spicy Habanero)",
-      "price": 1.5
-      },
-      {
-      "name": "GUACAMOLE",
-      "description": "(with/con Chips)",
-      "price": 6
-      },
-      {
-      "name": "LIME",
-      "name_es": "(Limón Verde)",
-      "price": 1
-      },
-      {
-      "name": "TORTILLAS (Corn or Flour)",
-      "price": 1.75
-      },
-      {
-      "name": "AVOCADO",
-      "name_es": "(Avocatl)",
-      "price": 4.25
-      },
-      {
-      "name": "LEMON",
-      "name_es": "(Limón Amarillo)",
-      "price": 1
-      },
-      {
-      "name": "CHIPS & SALSA TO GO",
-      "description_es": "(para llevar)",
-      "price": 4
-      },
-      {
-      "name": "CHIPS & SALSA IN HOUSE",
-      "description": "For Orders Under $5.00",
-      "description_es": "(orden menos de) $5.00",
-      "price": 1.5
-      },
-      {
-      "name": "CHIPS & SALSA IN HOUSE",
-      "description": "For Orders Over $5.00, 1st Round of Chips & Salsa is On Us, For Additional Orders",
-      "description_es": "Para ordenes mas de $5.00, 1ª Ronda va por la Casa, Ordenes adicionales",
-      "price": 2
-      }
-      ],
-      "addons_for_burritos": [
-      {
-      "name": "grilled veggies",
-      "name_es": "para agregar vegetales a la parilla",
-      "price": 2.75
-      },
-      {
-      "name": "prawns",
-      "name_es": "para agregar camarones",
-      "options": [
-      "mojo de ajo",
-      "a la diabla",
-      "vino blanco"
-      ],
-      "price": 4.25
-      },
-      {
-      "name": "grilled chicken",
-      "name_es": "para agregar pollo asado",
-      "price": 3.25
-      },
-      {
-      "name": "extra meat",
-      "name_es": "para agregar extra carne",
-      "price": 2.75
-      },
-      {
-      "name": "cheese & salsa on top",
-      "name_es": "para queso & salsa arriba",
-      "price": 3.75
-      },
-      {
-      "name": "sour cream, cheese, or pico de gallo",
-      "name_es": "para agregar o extra",
-      "price": 1.75
-      },
-      {
-      "name": "guacamole",
-      "name_es": "para agregar o extra",
-      "price": 2.75
-      }
-      ],
-      "meat_options": [
-      "Rotisserie Chicken/Pollo Rostizado",
-      "Grilled Chicken/Pollo Asado (+3.5)",
-      "Carnitas/Shredded Pork",
-      "Pastor/Pork in Red Salsa, Pineapple & Onion",
-      "Grilled Steak/Asada",
-      "Ground Beef/Carne Molida",
-      "Prawns/Camarones (+4.5)"
-      ],
-      "rice_and_beans": {
-      "rice": {
-      "description": "made with chicken stock/hecho con caldo de pollo"
-      },
-      "beans": [
-      "Refried Pinto Beans/Refritos en Aceite Canola",
-      "Whole Pinto Beans/Frijoles de la Olla",
-      "Black Beans w/ corn, onion, tomato, serranos & cumin/Frijoles negros con elote, cebolla, jitomate, serrano, comino"
-      ]
-      },
-      "additional_info": [
-      "Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.",
-      "No separate checks for parties of 5 or more",
-      "18% gratuity included for parties of 5 or more",
-      "Substitutions may include additional charges",
-      "To split dishes/orders add 1.00",
-      "Prices subject to change"
-      ]
-      }
+    "name": "PRAWN OPTIONS",
+    "description": "served with tortillas",
+    "description_es": "Opciones de Camarones, servido con tortillas",
+    "options": [
+    {
+    "name": "A LA CUCARACHA",
+    "description": "butterfly-cut prawns in huichol-garlic-lime sauce",
+    "description_es": "corte de mariposa con salsa huichol-ajo-limón"
+    },
+    {
+    "name": "AL MOJO DE AJO",
+    "description": "in fresh garlic & herbs",
+    "description_es": "en ajo fresco y especies"
+    },
+    {
+    "name": "A LA DIABLA",
+    "description": "in tomato-habanero salsa",
+    "description_es": "en salsa de jitomatl & habanero"
+    }
+    ],
+    "price": 17
+    },
+    {
+    "name": "CRAB ENCHILADAS",
+    "description": "crab sautéed in sour cream, tomato & onion, topped w/ cheese & red or green salsa",
+    "description_es": "Enchilada de Cangrejo sarteneado con crema, jitomate y cebolla, encima lleva queso y salsa verde o roja",
+    "options": [
+    {
+    "count": 1,
+    "price": 12
+    },
+    {
+    "count": 2,
+    "price": 17
+    }
+    ]
+    },
+    {
+    "name": "MOJARA",
+    "description": "WHOLE DEEP FRIED TILAPIA topped with chipotle aioli on top & side of tortillas",
+    "description_es": "Tiliapia Frita Entera y por encima lleva aioli de chipotle arriba, servido con tortillas",
+    "price": 17.5
+    },
+    {
+    "name": "FISH TACOS",
+    "description": "tilapia sautéed in white wine, tomato & onion, topped with cilantro & salsa",
+    "description_es": "Tacos de Pescada de Tilapia sarteneada en vino blanca, jitomatl & cebolla, arriba cilantro & salsa",
+    "options": [
+    {
+    "count": 1,
+    "price": 11
+    },
+    {
+    "count": 2,
+    "price": 14
+    }
+    ]
+    },
+    {
+    "name": "PRAWN TACOS",
+    "description": "sauteed in garlic, habanero, or white wine, tomato & onion, cilantro & salsa on top",
+    "description_es": "Tacos de Camarón sarteneado en vino blanca, jitomate & cebolla, arriba cilantro & salsa",
+    "options": [
+    {
+    "count": 1,
+    "price": 12.5
+    },
+    {
+    "count": 2,
+    "price": 15.5
+    }
+    ]
+    }
+    ],
+    "burgers_sandwiches": [
+    {
+    "name": "BURGER",
+    "description": "with mayo",
+    "description_es": "mayonesa",
+    "price": 6,
+    "addons": [
+    {
+    "name": "cheddar",
+    "name_es": "queso Amarillo",
+    "price": 0.75
+    },
+    {
+    "name": "blue cheese",
+    "name_es": "queso azul",
+    "price": 1.25
+    }
+    ]
+    },
+    {
+    "name": "GRILLED CHICKEN SANDWICH",
+    "description": "avocado, jalapeños & mayo, on sourdough",
+    "description_es": "Sandwich de Pollo a la Parilla: avocatl, jalapeños & mayonesa, en pan agrio",
+    "price": 9.75
+    },
+    {
+    "name": "TORTA DE MILANESA",
+    "description": "chicken breast breaded in panko [Japanese Breading] with avocado, jalapeños & chile chipotle aioli, on a French dip roll",
+    "description_es": "Pechuga de pollo empanizado en panko [pan Japonés molido] con avocatl, jalapeños & aderezo de chile chipotle, en pan de rollo blanco Frances",
+    "price": 11
+    },
+    {
+    "name": "TORTA MEXICANA",
+    "description": "meat, beans, lettuce, sour cream, guacamole & jalapeños, on a white roll",
+    "description_es": "Carne, frijoles, lechuga, crema, guacamole & jalapeños, en pan de rollo blanco Frances",
+    "price": 9.75
+    },
+    {
+    "name": "AHI BURGER",
+    "description": "seared black & blue, and chile chipotle aioli",
+    "description_es": "Hamburguesa de Atun: soasado negro y azul, y con aderezo de chile chipotle",
+    "price": 15.5
+    }
+    ],
+    "breakfast": [
+    {
+    "name": "CHILAQUILES",
+    "description": "fried white corn tortilla chips insalsa de tomate, topped w/ onion, tomato, cheese, sour cream & avocatl",
+    "description_es": "Tortillas de maiz blanco fritas en salsa de tomate, arriba lleva cebolla, tomato, queso, crema & avocatl",
+    "options": [
+    {
+    "description": "base",
+    "price": 11
+    },
+    {
+    "description": "with 2 Eggs",
+    "description_es": "con 2 huevos",
+    "price": 13
+    },
+    {
+    "description": "with Meat & 2 Eggs",
+    "description_es": "con carne y 2 huevos",
+    "price": 15
+    }
+    ]
+    },
+    {
+    "name": "MACHACA",
+    "description": "Eggs scrambled with Asada or Carnitas, bell peppers, tomato and onion. Topped with sour cream & avocatl, served with rice, beans & tortillas",
+    "description_es": "Huevo revuelto con Asada o Carnitas, chile campana, jitomatly cebolla. Arriba lleva crema y avocatl, servido con arroz, frijoles & tortillas",
+    "price": 13
+    },
+    {
+    "name": "HUEVOS CON CHORIZO",
+    "description": "Eggs scrambled in Chorizo (Spicy Sausage, tomato & onion). Topped with sour cream & guacamole, served with rice, beans & tortillas",
+    "description_es": "Huevo revuelto con chorizo, jitomatl y cebolla. Arriba lleva crema y guacamole, servido con arroz, frijoles & tortillas",
+    "price": 13
+    },
+    {
+    "name": "HUEVOS RANCHEROS",
+    "description": "tortilla topped w/2 eggs(scrambled or sunny side up), beans & salsa ranchera, with a side of rice & tortillas",
+    "description_es": "Tortilla que lleva encima 2 huevos (revueltos o estrellados), frijoles, y salsa ranchera, acompañado de arroz y tortillas",
+    "price": 13
+    }
+    ],
+    "sides_and_extras": [
+    {
+    "name": "MEAT ENCHILADA",
+    "count": 1,
+    "price": 4.25
+    },
+    {
+    "name": "CHIMICHANGA",
+    "count": 1,
+    "price": 8
+    },
+    {
+    "name": "CHILE RELLENO",
+    "count": 1,
+    "price": 7
+    },
+    {
+    "name": "FLAUTAS",
+    "count": 3,
+    "price": 8
+    },
+    {
+    "name": "POTATO",
+    "description": "blue cheese potato gratine, roasted potato with garlic, or mashed",
+    "description_es": "Papa: torta de papa con queso azul, papa rostizada con ajo, o puré de papa",
+    "price": 6.5
+    },
+    {
+    "name": "GRILLED CHILES, ONIONS w/ SEASONING",
+    "description_es": "(Chiles y Cebollas Rostizadas)",
+    "price": 2.75
+    },
+    {
+    "name": "FRIES",
+    "price": 3.5
+    },
+    {
+    "name": "DRESSING",
+    "name_es": "(Aderezo)",
+    "price": 1.5
+    },
+    {
+    "name": "BEANS",
+    "name_es": "(Frijoles)",
+    "price": 3
+    },
+    {
+    "name": "VEGGIES",
+    "name_es": "(Vegetales)",
+    "price": 5.25
+    },
+    {
+    "name": "TOMATILLO SALSA",
+    "price": 1.5
+    },
+    {
+    "name": "RICE",
+    "name_es": "(Arroz)",
+    "price": 3
+    },
+    {
+    "name": "SOUR CREAM",
+    "name_es": "(Crema)",
+    "price": 1
+    },
+    {
+    "name": "HOSTEN SALSA (spicy Habanero)",
+    "price": 1.5
+    },
+    {
+    "name": "GUACAMOLE",
+    "description": "(with/con Chips)",
+    "price": 6
+    },
+    {
+    "name": "LIME",
+    "name_es": "(Limón Verde)",
+    "price": 1
+    },
+    {
+    "name": "TORTILLAS (Corn or Flour)",
+    "price": 1.75
+    },
+    {
+    "name": "AVOCADO",
+    "name_es": "(Avocatl)",
+    "price": 4.25
+    },
+    {
+    "name": "LEMON",
+    "name_es": "(Limón Amarillo)",
+    "price": 1
+    },
+    {
+    "name": "CHIPS & SALSA TO GO",
+    "description_es": "(para llevar)",
+    "price": 4
+    },
+    {
+    "name": "CHIPS & SALSA IN HOUSE",
+    "description": "For Orders Under $5.00",
+    "description_es": "(orden menos de) $5.00",
+    "price": 1.5
+    },
+    {
+    "name": "CHIPS & SALSA IN HOUSE",
+    "description": "For Orders Over $5.00, 1st Round of Chips & Salsa is On Us, For Additional Orders",
+    "description_es": "Para ordenes mas de $5.00, 1ª Ronda va por la Casa, Ordenes adicionales",
+    "price": 2
+    }
+    ],
+    "addons_for_burritos": [
+    {
+    "name": "grilled veggies",
+    "name_es": "para agregar vegetales a la parilla",
+    "price": 2.75
+    },
+    {
+    "name": "prawns",
+    "name_es": "para agregar camarones",
+    "options": [
+    "mojo de ajo",
+    "a la diabla",
+    "vino blanco"
+    ],
+    "price": 4.25
+    },
+    {
+    "name": "grilled chicken",
+    "name_es": "para agregar pollo asado",
+    "price": 3.25
+    },
+    {
+    "name": "extra meat",
+    "name_es": "para agregar extra carne",
+    "price": 2.75
+    },
+    {
+    "name": "cheese & salsa on top",
+    "name_es": "para queso & salsa arriba",
+    "price": 3.75
+    },
+    {
+    "name": "sour cream, cheese, or pico de gallo",
+    "name_es": "para agregar o extra",
+    "price": 1.75
+    },
+    {
+    "name": "guacamole",
+    "name_es": "para agregar o extra",
+    "price": 2.75
+    }
+    ],
+    "meat_options": [
+    {
+    "name": "Rotisserie Chicken",
+    "name_es": "Pollo Rostizado"
+    },
+    {
+    "name": "Grilled Chicken",
+    "name_es": "Pollo Asado",
+    "price": 3.5
+    },
+    {
+    "name": "Carnitas",
+    "name_es": "Shredded Pork"
+    },
+    {
+    "name": "Pastor",
+    "name_es": "Pork in Red Salsa, Pineapple & Onion"
+    },
+    {
+    "name": "Grilled Steak",
+    "name_es": "Asada"
+    },
+    {
+    "name": "Ground Beef",
+    "name_es": "Carne Molida"
+    },
+    {
+    "name": "Prawns",
+    "name_es": "Camarones",
+    "price": 4.5
+    }
+    ],
+    "rice_and_beans": [
+    {
+    "name": "RICE",
+    "description": "(made with chicken stock/hecho con caldo de pollo)"
+    },
+    {
+    "name": "BEANS",
+    "name_es": "(Frijoles)",
+    "options": [
+    {
+    "name": "Refried Pinto Beans",
+    "name_es": "Refritos en Aceite Canola"
+    },
+    {
+    "name": "Whole Pinto Beans",
+    "name_es": "Frijoles de la Olla"
+    },
+    {
+    "name": "Black Beans",
+    "description": "w/ corn, onion, tomato, serranos & cumin",
+    "description_es": "Frijoles negros con elote, cebolla, jitomate, serrano, comino"
+    }
+    ]
+    }
+    ],
+    "beverages": [
+    {
+    "name": "Soft Drinks",
+    "options": [
+    "Coke",
+    "Diet Coke",
+    "Sprite",
+    "Dr. Pepper",
+    "Lemonade",
+    "Iced Tea"
+    ]
+    },
+    {
+    "name": "Aguas Frescas",
+    "options": [
+    "Horchata",
+    "Jamaica",
+    "Tamarindo"
+    ]
+    },
+    {
+    "name": "Beer",
+    "options": [
+    "Corona",
+    "Modelo",
+    "Pacifico",
+    "Negra Modelo",
+    "Dos Equis Lager",
+    "Dos Equis Amber",
+    "Tecate",
+    "Carta Blanca"
+    ]
+    },
+    {
+    "name": "Wine",
+    "options": [
+    "House Red",
+    "House White"
+    ]
+    },
+    {
+    "name": "Margaritas",
+    "options": [
+    "Lime",
+    "Strawberry",
+    "Mango",
+    "Peach",
+    "Piña Colada"
+    ]
+    }
+    ],
+    "additional_info": [
+    "CONSUMING RAW OR UNDERCOOKED MEATS, POULTRY, SEAFOOD, SHELLFISH, OR EGGS MAY INCREASE YOUR RISK OF FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE CERTAIN MEDICAL CONDITIONS.",
+    "NO SEPARATE CHECKS FOR PARTIES OF 5 OR MORE",
+    "18% GRATUITY INCLUDED FOR PARTIES OF 5 OR MORE",
+    "SUBSTITUTIONS MAY INCLUDE ADDITIONAL CHARGES",
+    "TO SPLIT DISHES/ORDERS ADD 1.00",
+    "EL CONSUMO DE CARNES, AVES, MARISCOS, O HUEVOS CRUDOS O A TERMINO, PUEDE AUMENTAR EL RIESGO DE CONTRAER UNA ENFERMEDAD ALIMENTARIA, ESPECIALMENTE SI TIENE CIERTAS CONDICIONES MEDICAS.",
+    "NO CUENTAS SEPARADAS PARA MESAS DE 5 O MAS",
+    "PROPINA DE 18% INCLUIDA PARA MESAS DE 5 O MAS",
+    "SUSTITUCIONES PUEDEN ESTAR SUJETOS A CARGOS ADICIONALES",
+    "PARA DIVIDIR PLATILLOS/ORDENES AGREGAR 1.00",
+    "Prices Subject to Change — Precios Sujetos a Cambio"
+    ]
+    }

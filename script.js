@@ -1,9 +1,11 @@
 fetch('menu.json')
   .then(response => response.json())
   .then(data => {
-    const menuDiv = document.getElementById('menu');
+    const menuContainer = document.getElementById('menu-container');
 
     for (const section in data) {
+      if (section === 'additional_info') continue;
+
       const sectionDiv = document.createElement('div');
       sectionDiv.classList.add('menu-section');
 
@@ -30,14 +32,9 @@ fetch('menu.json')
         itemDescription.textContent = item.description;
         itemDiv.appendChild(itemDescription);
 
-        const itemDescriptionEs = document.createElement('div');
-        itemDescriptionEs.classList.add('menu-item-description');
-        itemDescriptionEs.textContent = item.description_es;
-        itemDiv.appendChild(itemDescriptionEs);
-
         sectionDiv.appendChild(itemDiv);
       });
 
-      menuDiv.appendChild(sectionDiv);
+      menuContainer.appendChild(sectionDiv);
     }
   });

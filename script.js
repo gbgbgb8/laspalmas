@@ -1,3 +1,5 @@
+let order = [];
+
 fetch('menu.json')
   .then(response => response.json())
   .then(data => {
@@ -51,6 +53,15 @@ fetch('menu.json')
           descriptionEsCell.textContent = item.description_es;
           row.appendChild(descriptionEsCell);
 
+          const addToOrderCell = document.createElement('td');
+          const addToOrderButton = document.createElement('button');
+          addToOrderButton.textContent = 'Add to Order';
+          addToOrderButton.classList.add('add-to-order');
+          addToOrderButton.setAttribute('data-item-name', item.name);
+          addToOrderButton.setAttribute('data-item-price', item.price);
+          addToOrderCell.appendChild(addToOrderButton);
+          row.appendChild(addToOrderCell);
+
           table.appendChild(row);
         });
 
@@ -58,4 +69,46 @@ fetch('menu.json')
         menuContainer.appendChild(sectionDiv);
       }
     }
+
+    // Add event listeners to "Add to Order" buttons
+    const addToOrderButtons = document.querySelectorAll('.add-to-order');
+    addToOrderButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const itemName = button.getAttribute('data-item-name');
+        const itemPrice = parseFloat(button.getAttribute('data-item-price'));
+        addToOrder(itemName, itemPrice);
+      });
+    });
+
+    // Handle "Place Order" button click
+    const placeOrderButton = document.getElementById('place-order');
+    placeOrderButton.addEventListener('click', placeOrder);
   });
+
+function addToOrder(itemName, itemPrice) {
+  order.push({ name: itemName, price: itemPrice });
+  updateOrderSummary();
+}
+
+function updateOrderSummary() {
+  const orderItemsList = document.getElementById('order-items');
+  orderItemsList.innerHTML = '';
+
+  order.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    orderItemsList.appendChild(li);
+  });
+
+  const totalCost = order.reduce((sum, item) => sum + item.price, 0);
+  document.getElementById('total-cost').textContent = totalCost.toFixed(2);
+}
+
+function placeOrder() {
+  // Generate printable or shareable order summary
+  const orderSummary = `Order Summary:\n${order.map(item => `${item.name} - $${item.price.toFixed(2)}`).join('\n')}`;
+  alert(orderSummary);
+  // Reset order
+  order = [];
+  updateOrderSummary();
+}

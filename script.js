@@ -25,7 +25,7 @@ fetch('menu.json')
         additionalInfoContainer.appendChild(details);
       } else {
         const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('menu-section', 'card');
+        sectionDiv.classList.add('menu-section');
 
         const sectionTitle = document.createElement('h2');
         sectionTitle.textContent = section.replace(/_/g, ' ');
@@ -56,7 +56,7 @@ fetch('menu.json')
           const addToOrderCell = document.createElement('td');
           const addToOrderButton = document.createElement('button');
           addToOrderButton.textContent = 'Add to Order';
-          addToOrderButton.classList.add('add-to-order', 'button');
+          addToOrderButton.classList.add('add-to-order');
           addToOrderButton.setAttribute('data-item-name', item.name);
           addToOrderButton.setAttribute('data-item-price', item.price);
           addToOrderCell.appendChild(addToOrderButton);
@@ -65,11 +65,7 @@ fetch('menu.json')
           table.appendChild(row);
         });
 
-        const tableContainer = document.createElement('div');
-        tableContainer.classList.add('table-container');
-        tableContainer.appendChild(table);
-
-        sectionDiv.appendChild(tableContainer);
+        sectionDiv.appendChild(table);
         menuContainer.appendChild(sectionDiv);
       }
     }
@@ -109,30 +105,10 @@ function updateOrderSummary() {
 }
 
 function placeOrder() {
-  const orderSummaryModal = document.getElementById('order-summary-modal');
-  orderSummaryModal.innerHTML = `
-    <ul class="list">
-      ${order.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join('')}
-    </ul>
-    <p>Total Cost: $${order.reduce((sum, item) => sum + item.price, 0).toFixed(2)}</p>
-  `;
-
-  const orderModal = document.getElementById('order-modal');
-  orderModal.showModal();
-
-  const cancelOrderButton = document.getElementById('cancel-order');
-  cancelOrderButton.addEventListener('click', () => {
-    orderModal.close();
-  });
-
-  const confirmOrderButton = document.getElementById('confirm-order');
-  confirmOrderButton.addEventListener('click', () => {
-    // Generate printable or shareable order summary
-    const orderSummary = `Order Summary:\n${order.map(item => `${item.name} - $${item.price.toFixed(2)}`).join('\n')}`;
-    alert(orderSummary);
-    // Reset order
-    order = [];
-    updateOrderSummary();
-    orderModal.close();
-  });
+  // Generate printable or shareable order summary
+  const orderSummary = `Order Summary:\n${order.map(item => `${item.name} - $${item.price.toFixed(2)}`).join('\n')}`;
+  alert(orderSummary);
+  // Reset order
+  order = [];
+  updateOrderSummary();
 }

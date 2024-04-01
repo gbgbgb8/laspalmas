@@ -1,81 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .menu-section {
-    margin-bottom: 2rem;
-  }
-  
-  .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .menu-item:last-child {
-    border-bottom: none;
-  }
-  
-  .menu-item-name {
-    font-weight: bold;
-  }
-  
-  .menu-item-price {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .menu-item-description {
-    margin-top: 0.25rem;
-    font-style: italic;
-    color: #666;
-  }
-  
-  .menu-item-description.es {
-    font-style: italic;
-    color: #888;
-    margin-top: 0.25rem;
-  }
-  
-  #additional-info {
-    margin-top: 2rem;
-  }
-  
-  details {
-    margin-bottom: 1rem;
-  }
-  
-  .table-container {
-    overflow-x: auto;
-  }
-  
-  .card {
-    margin-bottom: 1rem;
-  }
-  
-  .nav {
-    background-color: #f8f9fa;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-  }
-  
-  .dialog {
-    max-width: 500px;
-  }
-  
-  .dialog-content {
-    padding: 1rem;
-  }
-  
-  .dialog-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1rem;
-  }
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.menu-section {
+  margin-bottom: 2rem;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-name {
+  font-weight: bold;
+}
+
+.menu-item-price {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.menu-item-description {
+  margin-top: 0.25rem;
+  font-style: italic;
+  color: #666;
+}
+
+.menu-item-description.es {
+  font-style: italic;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+#additional-info {
+  margin-top: 2rem;
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.nav {
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.dialog {
+  max-width: 500px;
+}
+
+.dialog-content {
+  padding: 1rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
